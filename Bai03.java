@@ -1,22 +1,20 @@
-package tuan3;
-import java.util.Scanner;
+package tuan2;
+
 public class Bai03 {
 	public static void main(String[] args) {
-		int n,min;
-		System.out.print("Nhap so phan tu cua day: ");
-		Scanner sc = new Scanner(System.in);
-		n = sc.nextInt();
-		int A[] = new int[n];
-		System.out.println("Nhap vao cac phan tu(so tu nhien) cua day:");
-		for(int i=0;i<n;i++) A[i] = sc.nextInt();
-		sc.close();
-		min=A[0];
-		for(int i=1;i<n;i++) if(A[i]<min) min=A[i];
-		System.out.println("So nho nhat trong day la: " + min);
-		System.out.println("Cac chi so ung voi gia tri "
-		+min+" trong day la:");
-		for(int i=0;i<n;i++)
-		if(A[i]==min) System.out.print(i + " ");
+		int counter=0;
+		for(int i=1000;i<=2000;i++) {
+			if(isPrime(i)) {
+				System.out.printf("%-5d",i);
+				counter++;
+				if(counter==16) {System.out.println();counter=0;}
+			}
+		}
 		System.out.println("\n20194188 Do Thi Thuy Trang-709155");
 	}
+	public static boolean isPrime(int n) {
+		if(n<2)return false;
+    	for(int i = 2;i<n;i++) if(n%i==0) return false;
+    	return true;
+    }
 }
