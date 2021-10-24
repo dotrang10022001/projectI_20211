@@ -1,23 +1,26 @@
-package tuan2;
-import java.util.Random;
+package tuan3;
 import java.util.Scanner;
 public class Bai11 {
 	public static void main(String[] args) {
-		int N;
-		System.out.print("Nhap so tu nhien N(>1): ");
+		int n,length=1,j=0;
+		System.out.print("Nhap so phan tu cua day: ");
 		Scanner sc = new Scanner(System.in);
-	    N = sc.nextInt();
-	    int A[] = new int[N];
-	    System.out.print("Nhap vao 1 day so gom " + N + " so: ");
-	    for(int i=0;i<N;i++) A[i] = sc.nextInt();
-	    sc.close();
-	    Random r = new Random();
-	    int m = r.nextInt(N), n = r.nextInt(N);
-	    int t = A[m];
-	    A[m] = A[n];
-	    A[n] = t;
-	    System.out.print("Day sau khi trao doi 2 vi tri "+m+" va "+n+" la: ");
-	    for(int i=0;i<N;i++) System.out.print(A[i]+ " ");
-	    System.out.println("\n20194188 Do Thi Thuy Trang-709155");
+		n = sc.nextInt();
+		int A[] = new int[n],B[] = new int[2*n];
+		System.out.println("Nhap vao cac phan tu(so nguyen) cua day:");
+		for(int i=0;i<n;i++) A[i] = sc.nextInt();
+		sc.close();
+	    B[j]=0;
+		for(int i=1;i<n;i++) 
+		if(A[i]>A[i-1]) length++;
+		else {B[j+n]=length;B[++j]=i;length=1;}
+		B[j+n]=length;
+		System.out.println("Day con don dieu tang lien nhau dai nhat"
+				+ "\nco chi so bat dau va so luong phan tu la: ");
+		int max=B[n];
+		for(int i=n+1;i<2*n;i++) if(B[i]>max)max=B[i];
+		for(int i=n;i<2*n;i++)
+		if(B[i]==max) System.out.println(B[i-n]+" "+max);
+		System.out.println("20194188 Do Thi Thuy Trang-709155");
 	}
 }
