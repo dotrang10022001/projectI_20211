@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ThongKeController">
+   <children>
+      <BarChart fx:id="barchart" layoutX="72.0" layoutY="45.0" prefHeight="415.0" prefWidth="500.0" title="Thống kê theo tuổi">
+        <xAxis>
+          <CategoryAxis fx:id="doTuoi" label="Độ tuổi" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="soLuong" label="Số lượng" side="LEFT" upperBound="50.0" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>
